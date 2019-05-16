@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar  color="purple" text-center>
+    <ion-title>Feed</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content pading>
+  <ion-card *ngFor="let movie of listMovies">
+    <ion-item>
+      <h2 class="details_title">{{movie.original_title}}</h2>
+      <p class="details_date">{{movie.release_date}}</p>
+    </ion-item>
+    <img bind-src="'https://image.tmdb.org/t/p/w500' + movie.backdrop_path">
+    <ion-card-content >
+      <p class="details-description">{{movie.overview}}</p>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

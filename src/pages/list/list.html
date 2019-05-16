@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar color="purple">
+    <ion-title text-center>Meus filmes</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-input type="text"([ngModel])="element" placeholder="Adicione um filme" clear-input></ion-input>
+    <button ion-button (click)="addMovie()" type="button">Adicionar</button>
+  <ion-list>
+    <ion-item-sliding *ngFor="let element of movies; let i = index">
+      <ion-item>
+        <ion-label>
+          {{element}}
+        </ion-label>
+      </ion-item>
+      <ion-item-options side="end">
+        <button ion-button color="purple" (click)="edit(element)" expandable>
+          <ion-icon name="create"></ion-icon>
+        </button>
+        <button ion-button color="danger" (click)="deleteMovie(i)" expandable>
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-content>
